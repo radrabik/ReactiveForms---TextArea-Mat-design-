@@ -1,0 +1,19 @@
+<div [formGroup]="form">
+
+<!-- textarea -->
+<mat-form-field appearance="outline">
+
+  <textarea matInput placeholder="Description" formControlName="longDescription" #longDesc>
+  </textarea>
+  
+  <div *ngIf="longDescription.errors?.minlength">
+    Current size of text area is {{ longDesc.value.length }} where 5 is min lenght.
+  </div>
+
+</mat-form-field>
+
+<div> 
+  {{ form.value | json }}
+</div>
+
+</div>
